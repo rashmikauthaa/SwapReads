@@ -484,7 +484,7 @@ body {
 .navbar-link {
   color: var(--charcoal);
   padding-block: 8px;
-  line-height: 2;
+  line-height: 1;
   transition: var(--transition-1);
 }
 
@@ -1577,9 +1577,14 @@ responsiveness for small devices below 1200px */
   color: black;
   border: none;
   border-radius: 50px;
-  padding: 10px 20px;
+  padding: 9px 18px;
   cursor: pointer;
 }
+
+#scrollToTopBtn:hover {
+  background-color: var(--chinese-violet);
+}
+
 .faq-container:hover {
   background-color: var(--old-rose_30);
 }
