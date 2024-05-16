@@ -38,14 +38,14 @@
     />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link
-  href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
-  rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Login / SignUp</title>
     <link rel="stylesheet" href="../css/login.css" />
-
-    
   </head>
+
   <body>
     <div class="navbar">
       <div class="navbar-header">
@@ -69,7 +69,7 @@
       <h1>
         Welcome to SwapReads
         <h2>
-          Join us by registering or log in if you already have an account.
+          Join us by creating an account or log in if you already have an account.
         </h2>
       </h1>
     </div>
@@ -84,7 +84,7 @@
 	      <label for="email">Email</label>
 		  <input type="text" name="email" id="email" class="form-control" placeholder="Enter your email">
 		</div>
-		
+
 		<div class="form-group">
 	      <label for="password" >Password</label>
 		  <input type="password" name="password" id="password" class="form-control"  placeholder="Enter your password">
@@ -104,7 +104,8 @@
 	      <label for="email">Email</label>
 		  <input type="text" name="login_email" id="login_email" class="form-control" placeholder="Enter your email">
 		</div>
-		
+
+
 		<div class="form-group">
 	      <label for="password">Password</label>
 		  <input type="password" name="login_password" id="login_password" class="form-control"  placeholder="Enter your password">
@@ -117,58 +118,31 @@
       <div class="main">
         <input type="checkbox" id="chk" aria-hidden="true" />
 
-        <div class="login">
-          <form class="form">
-            <label for="chk" aria-hidden="true">LOGIN</label>
-            <input
-              class="input"
-              type="email"
-              name="email"
-              id="login_email"
-              placeholder="Email"
-              required=""
-            />
-            <input
-              class="input"
-              type="password"
-              name="pswd"
-              id="login_password"
-              placeholder="Password"
-              required=""
-            />
-            <button type="button" name="Login" id="login">Submit</button>
-            <p class="forget-password">
-              Forgot Password?
-              <a href="#" id="forgot_password_link">Reset Here</a>
-            </p>
-          </form>
-        </div>
+ <div class="login">
+        <form class="form" id="login-form">
+          <label for="chk" aria-hidden="true">LOGIN</label>
+          <input class="input" type="email" name="email" id="login_email" placeholder="Email" required />
+          <input class="input" type="password" name="pswd" id="login_password" placeholder="Password" required />
+          <button type="submit" name="Login" id="login">Submit</button>
+          <p class="forget-password">
+            Forgot Password?
+            <a href="#" id="forgot_password_link">Reset Here</a>
+          </p>
+        </form>
+      </div>
 
-        <div class="register">
-          <form class="form">
-            <label for="chk" aria-hidden="true">Register</label>
-            <!-- <input class="input" type="text" name="txt" placeholder="Username" required=""> -->
-            <input
-              class="input"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              required=""
-            />
-            <input
-              class="input"
-              type="password"
-              name="pswd"
-              id="password"
-              placeholder="Password"
-              required=""
-            />
-            <button type="button" name="register" id="register">
-              Register
             </button>
-          </form>
-        </div>
+
+      <div class="register">
+        <form class="form" id="register-form">
+          <label for="chk" aria-hidden="true">Create Account</label>
+          <!-- <input class="input" type="text" name="txt" placeholder="Username" required=""> -->
+          <input class="input" type="email" name="email" id="email" placeholder="Email" required />
+          <input class="input" type="password" name="pswd" id="password" placeholder="Password" required />
+          <button type="submit" name="register" id="register">
+            Register
+          </button>
+        </form>
       </div>
     </div>
   </body>
@@ -177,22 +151,21 @@
     <div class="container">
       <div class="footer-bottom">
         <p class="copyright">
-          &copy; 2024 All right reserved. Made with ❤ by Guardian Hackers.
+          &copy; <script>document.write(new Date().getFullYear())</script> All rights reserved. Made with ❤ by Guardian Hackers.
         </p>
       </div>
     </div>
   </footer>
   <script type="module">
     // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js';
+    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js';
     import {
       getAuth,
       createUserWithEmailAndPassword,
       signInWithEmailAndPassword,
-      sendPasswordResetEmail,
       signOut,
-    } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js';
 
     //const credential = EmailAuthProvider.credential(email, password);
     // TODO: Add SDKs for Firebase products that you want to use
@@ -201,13 +174,13 @@
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
-      apiKey: "AIzaSyCu2WXknNce_49J5BLuR1DyHm319hu6dWc",
-      authDomain: "login-13127.firebaseapp.com",
-      projectId: "login-13127",
-      storageBucket: "login-13127.appspot.com",
-      messagingSenderId: "151656578300",
-      appId: "1:151656578300:web:c67208ab6ec437c844ab79",
-      measurementId: "G-L3PPD58MZ8",
+      apiKey: 'AIzaSyCu2WXknNce_49J5BLuR1DyHm319hu6dWc',
+      authDomain: 'login-13127.firebaseapp.com',
+      projectId: 'login-13127',
+      storageBucket: 'login-13127.appspot.com',
+      messagingSenderId: '151656578300',
+      appId: '1:151656578300:web:c67208ab6ec437c844ab79',
+      measurementId: 'G-L3PPD58MZ8',
     };
 
     // Initialize Firebase
@@ -216,46 +189,67 @@
     //console.log(app);
     const auth = getAuth();
 
-    //----- New Registration code start
-    let register = document.querySelector(".register");
-    document.getElementById("register").addEventListener("click", function () {
-      let email = document.getElementById("email").value;
-      let password = document.getElementById("password").value;
-      //For new registration
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          console.log(user);
-          alert("Registration successfully!!");
-          email = "";
-          password = "";
-          register.style.transform = "translateY(8%)";
-          // ...
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-          console.log(errorMessage);
-          alert(error);
+
+  //----- New Registration code start
+  let register = document.querySelector(".register");
+  document.getElementById("register-form").addEventListener("submit", function () {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    if (email.trim() === "") {
+      alert("Please enter an email address");
+      return;
+    }
+
+    var apiUrl = "https://disposable.debounce.io/?email=" + encodeURIComponent(email);
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        var disposable = data.disposable === "true"; // Convert string to boolean
+        if (disposable) {
+          alert("Please provide a genuine email address to continue.");
+        } else {
+
+
+
+            //For new registration
+
+            createUserWithEmailAndPassword(auth, email, password)
+              .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                console.log(user);
+                alert('Registration successfully!!');
+                email = '';
+                password = '';
+                register.style.transform = 'translateY(8%)';
+                // ...
+              })
+              .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+                console.log(errorMessage);
+                alert(error);
+              });
+          }
         });
     });
     //----- End
 
     //----- Login code start
-    document.getElementById("login").addEventListener("click", function () {
-      let email = document.getElementById("login_email").value;
-      let password = document.getElementById("login_password").value;
+    document.getElementById('login').addEventListener('click', function () {
+      let email = document.getElementById('login_email').value;
+      let password = document.getElementById('login_password').value;
 
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
           //const user = userCredential.user;
           //console.log(user);
-          window.location.href = "../../index.html";
+          window.location.href = '../../index.html';
           //alert(user.email+" Login successfully!!!");
-          document.getElementById("logout").style.display = "block";
+          document.getElementById('logout').style.display = 'block';
           // ...
         })
         .catch((error) => {
@@ -268,62 +262,83 @@
     //----- End
 
     //----- Logout code start
-    document.getElementById("logout").addEventListener("click", function () {
+    document.getElementById('logout').addEventListener('click', function () {
       signOut(auth)
         .then(() => {
           // Sign-out successful.
-          console.log("Sign-out successful.");
-          alert("Sign-out successful.");
-          document.getElementById("logout").style.display = "none";
+          console.log('Sign-out successful.');
+          alert('Sign-out successful.');
+          document.getElementById('logout').style.display = 'none';
         })
         .catch((error) => {
           // An error happened.
-          console.log("An error happened.");
+          console.log('An error happened.');
         });
     });
     //----- End
 
-    // FORGET and RESET password
+    // google auth
 
-    // New code to handle password reset
-    document
-      .getElementById("forgot_password_link")
-      .addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent the default action of the link
-        const email = document.getElementById("login_email").value;
+    function signInWithGoogle() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+          // Handle successful sign-in
+          // const user = result.user;
+          // console.log(user);
+          window.location.href = '../../index.html';
+        })
+        .catch((error) => {
+          // Handle errors
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.error(errorMessage);
+        });
+    }
 
-        // Send password reset email
-        sendPasswordResetEmail(auth, email)
-          .then(() => {
-            // Password reset email sent successfully
-            alert("Password reset email sent. Please check your email inbox.");
-          })
-          .catch((error) => {
-            // An error occurred
-            console.error("Error sending password reset email:", error.message);
-            alert("An error occurred while sending the password reset email.");
-          });
-      });
+    document.getElementById('google').addEventListener('click', function () {
+      signInWithGoogle();
+    });
   </script>
 
-  <!---Dark Mode-->
-  <script>
-    function applyDarkModePreferenceOnLoginPage() {
-      const isDarkMode = isDarkModePreferred();
-      if (isDarkMode) {
-        document.body.classList.add("dark-mode");
-      } else {
-        document.body.classList.remove("dark-mode");
-      }
+<!---Dark Mode-->
+<script>
+  function applyDarkModePreferenceOnLoginPage() {
+    const isDarkMode = isDarkModePreferred();
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+      document.querySelector('.navbar').classList.add('dark-mode');
+      const closeButton = document.querySelector('.close-icon');
+      closeButton.src = "../images/close-white.png";
+      // For darkmode styles
+      const noteElements = document.querySelectorAll('.note *');
+      noteElements.forEach(element => {
+        element.classList.add('dark-mode');
+      })
+
+      const containerElements = document.querySelectorAll('.container *');
+      containerElements.forEach(element => {
+        element.classList.add('dark-mode');
+      })
+
+
+    } else {
+      document.body.classList.remove("dark-mode");
+      document.querySelector('.navbar').classList.remove('dark-mode');
+      const closeButton = document.querySelector('.close-icon');
+      closeButton.src = "../images/close1.png";
     }
+  }
 
     // Function to check if dark mode preference exists
     function isDarkModePreferred() {
-      return JSON.parse(localStorage.getItem("darkMode"));
+      return JSON.parse(localStorage.getItem('darkMode'));
     }
 
     // Call the function when the page loads
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener('DOMContentLoaded', function () {
       applyDarkModePreferenceOnLoginPage();
     });
   </script>
